@@ -1,17 +1,3 @@
-# @toast-ui/calendar（for vue3）
-
-Simple `@toast-ui/calendar` wrapper for vue3, pr welcomes ~
-
-![Preview](./docs/preview.png)
-
-## 📸 Run Dev
-
-1. `pnpm install`
-2. `pnpm serve`
-
-## 📸 Usage
-
-```vue
 <template>
   <div class="play-container">
     <tui-calendar
@@ -30,10 +16,20 @@ Simple `@toast-ui/calendar` wrapper for vue3, pr welcomes ~
 <script setup lang="ts">
 import { computed } from 'vue';
 
+/** for local dev */
+// import TuiCalendar from '../../src';
+
+/** for local artifacts test */
+// import TuiCalendar from '../../dist/lib/index.esm.js';
+// import '../../dist/style.css';
+
+/** for npm pkg test */
 import TuiCalendar from 'toast-ui-calendar-vue3';
 import 'toast-ui-calendar-vue3/dist/style.css'
 
 import { events } from './mock-data.js';
+
+console.log('[debug] TuiCalendar', TuiCalendar)
 
 /**
  * Calendar 配置项
@@ -95,8 +91,3 @@ const views = computed(() => ([
   }
 }
 </style>
-```
-
-## 📄 License
-
-MIT License
